@@ -17,10 +17,10 @@
     const selectHeader = document.querySelector('#header');
     if (!selectHeader.classList.contains('scroll-up-sticky') && !selectHeader.classList.contains('sticky-top') && !selectHeader.classList.contains('fixed-top')) return;
     window.scrollY > 100 ? selectBody.classList.add('scrolled') : selectBody.classList.remove('scrolled');
-
     /* custom para el logo */
     const logo = document.getElementById('logo');
     window.scrollY > 100 ?  logo.src = 'assets/img/logo1.png' :  logo.src = 'assets/img/logo-blanco.png';
+
   }
 
   document.addEventListener('scroll', toggleScrolled);
