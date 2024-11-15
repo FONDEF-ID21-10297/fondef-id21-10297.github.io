@@ -20,7 +20,7 @@
     /* custom para el logo */
     const logo = document.getElementById('logo');
     window.scrollY > 100 ?  logo.src = 'assets/img/logo1.png' :  logo.src = 'assets/img/logo-blanco.png';
-
+    
   }
 
   document.addEventListener('scroll', toggleScrolled);
