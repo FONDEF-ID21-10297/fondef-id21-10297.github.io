@@ -163,10 +163,11 @@
 
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="swiper init-swiper">
-          <iframe id="youtubePlayer" width="315" height="560" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
-    <script>
+        <div class="row gy-4">
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="swiper init-swiper">
+              <iframe id="youtubePlayer" width="315" height="560" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+              <script>
         const videoIds = [
             "_dpSeXlgTRs", // Video 1
             "Z8Tb9CAwvf4", // Video 2
@@ -187,7 +188,14 @@
             changeVideo(); // Carga el primer video
             setInterval(changeVideo, 40000); // Cambia el video cada 10 segundos
         });
-    </script>
+        </script>
+        </div>
+      </div>
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+         <img src="assets/img/about/pred_vs_obser_models.png" class="img-fluid rounded-4 mb-4" alt="">
+      </div>
+        
+
     </div>
     </div>
 
@@ -238,7 +246,6 @@
             <div class="swiper-slide"><img src="https://anid.cl/wp-content/uploads/2022/04/anid_rojo_azul.png" class="img-fluid" alt=""></div>
             <div class="swiper-slide"><img src="assets/img/clients/umayor.png" class="img-fluid" alt=""></div>
           </div>
-          <div class="swiper-pagination"></div>
         </div>
 
       </div>
