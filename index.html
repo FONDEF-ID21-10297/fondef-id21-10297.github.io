@@ -120,12 +120,6 @@
             <h3>Somos tecnología satelital al servicio de la optimización del riego en huertos</h3>
             <img src="assets/img/huerto-cerezo.jpg" class="img-fluid rounded-4 mb-4" alt="">
             <p>SatOri es un proyecto innovador diseñado para mejorar la gestión del riego en huertos agrícolas, aprovechando tecnología satelital avanzada. Nuestro enfoque permite a los productores optimizar el uso del agua y mejorar la productividad agrícola.</p>
-            <iframe width="560" height="315" 
-              src="https://youtube.com/shorts/_dpSeXlgTRs?feature=share" 
-              frameborder="0" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-              allowfullscreen>
-            </iframe>
           </div>
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="250">
             <div class="content ps-0 ps-lg-5">
@@ -157,6 +151,40 @@
       </div>
 
     </section><!-- /About Section -->
+    
+     <!-- Videos Section -->
+    <section id="videos" class="clients section light-background">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="swiper init-swiper">
+          <iframe id="youtubePlayer" width="315" height="560" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+    <script>
+        const videoIds = [
+            "_dpSeXlgTRs", // Video 1
+            "Z8Tb9CAwvf4", // Video 2
+            "jUdy_JjQA8A",  // Video 3
+            "CaUxwrU6i3o", // Video 4
+            "yRpOn-45MXQ"  // Video 5
+        ];
+
+        let currentIndex = 0;
+
+        function changeVideo() {
+            const iframe = document.getElementById("youtubePlayer");
+            iframe.src = `https://www.youtube.com/embed/${videoIds[currentIndex]}?autoplay=1`;
+            currentIndex = (currentIndex + 1) % videoIds.length;
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            changeVideo(); // Carga el primer video
+            setInterval(changeVideo, 40000); // Cambia el video cada 10 segundos
+        });
+    </script>
+    </div>
+    </div>
+
+    </section><!-- /Videos Section -->
     
     <!-- Clients Section -->
     <section id="clients" class="clients section light-background">
@@ -647,10 +675,7 @@
                   <span>Director</span>
                 </div>
                 <div class="social">
-                  <a href=""><i class="bi bi-twitter-x"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
+                  <a href="https://www.linkedin.com/in/frzambra/"><i class="bi bi-linkedin"></i></a>
                 </div>
               </div>
             </div>
@@ -876,16 +901,14 @@
             <span class="sitename">SatOri</span>
           </a>
           <div class="footer-contact pt-3">
-            <p>A108 Adam Street</p>
-            <p>New York, NY 535022</p>
-            <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
-            <p><strong>Email:</strong> <span>info@example.com</span></p>
+            <p>Avenida La Piramide 5750</p>
+            <p>Huechuraba, Santiago</p>
+            <p class="mt-3"><strong>Teléfono:</strong> <span>+56 2 2518 9703</span></p>
+            <p><strong>Email:</strong> <span>contacto@odes-chile.org</span></p>
           </div>
           <div class="social-links d-flex mt-4">
-            <a href=""><i class="bi bi-twitter-x"></i></a>
-            <a href=""><i class="bi bi-facebook"></i></a>
-            <a href=""><i class="bi bi-instagram"></i></a>
-            <a href=""><i class="bi bi-linkedin"></i></a>
+           <a href="https://www.instagram.com/_odeschile/"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.instagram.com/_odeschile/"><i class="bi bi-linkedin"></i></a>
           </div>
         </div>
         <!--
@@ -928,7 +951,7 @@
 
    
     <div class="container copyright text-center mt-4">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">SatOri</strong> <span>All Rights Reserved</span></p>
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">SatOri</strong> <span>Todos los derechos reservados</span></p>
       <!--
       <div class="credits">
         Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
