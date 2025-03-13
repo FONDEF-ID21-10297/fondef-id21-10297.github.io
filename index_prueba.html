@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carga diferida de iframe</title>
+    <style>
+        .spacer {
+            height: 100vh; /* Espacio antes del iframe */
+            background: lightgray;
+        }
+        .iframe-container {
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="spacer">Desplázate hacia abajo para cargar el iframe</div>
+
+    <div class="iframe-container">
+        <iframe id="lazy-iframe" width="600" height="400" data-src="https://www.example.com" frameborder="0"></iframe>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let iframe = document.getElementById("lazy-iframe");
+            let observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        iframe.src = iframe.getAttribute("data-src"); // Cargar solo cuando sea visible
+                        observer.disconnect(); // Deja de observar después de cargar
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            observer.observe(iframe);
+        });
+    </script>
+
+</body>
+</html>

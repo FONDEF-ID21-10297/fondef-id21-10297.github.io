@@ -903,9 +903,34 @@
 
         <div class="info-wrap">
           <div class="row gy-5">
-
-            <iframe src="https://jbkunst.shinyapps.io/satori/" frameborder="0" marginheight="0" marginwidth="0" width="100%" height="800px" scrolling="auto">
+            <div class='iframe-container'>
+            <img id="loading-gif" class="loading" src="https://i.gifer.com/ZZ5H.gif" alt="Cargando...">
+            <iframe id="lazy-iframe" data-src="https://jbkunst.shinyapps.io/satori/" frameborder="0" marginheight="0" marginwidth="0" width="100%" height="800px" scrolling="auto">
             </iframe>
+            </div>
+              <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let iframe = document.getElementById("lazy-iframe");
+            let loadingGif = document.getElementById("loading-gif");
+
+            let observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        iframe.src = iframe.getAttribute("data-src"); // Asigna la URL real
+                        observer.disconnect(); // Deja de observar
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            observer.observe(iframe);
+
+            // Cuando el iframe cargue, oculta el GIF y muestra el iframe
+            iframe.onload = function () {
+                loadingGif.style.display = "none";
+                iframe.style.display = "block";
+            };
+        });
+    </script>
 
           </div>
         </div>
